@@ -1,0 +1,51 @@
+:root { font-family: system-ui, sans-serif; color: #20312d; background: #f3f5f2; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1180px; margin: auto; padding: 38px 24px; }
+header, .section-heading, footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+h1 { font-size: clamp(25px, 4vw, 34px); margin: 4px 0 0; letter-spacing: -.04em; }
+h2 { font-size: 19px; margin: 0; }
+.eyebrow { margin: 0; color: #527367; font-size: 12px; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; }
+.day-block { display: grid; gap: 6px; text-align: right; }
+.day-block strong { font-size: 20px; }
+.day-block span, .section-heading span { color: #607069; font-size: 13px; }
+.summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0; }
+.summary > div { background: #fff; border: 1px solid #dae3da; border-radius: 12px; padding: 20px 24px; display: grid; gap: 8px; }
+.summary span { color: #607069; font-size: 14px; }
+.summary strong { font-size: 28px; font-variant-numeric: tabular-nums; letter-spacing: -.03em; }
+.workspace { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 22px; }
+.market, .detail { background: #fff; border: 1px solid #dae3da; border-radius: 12px; padding: 24px; }
+.section-heading { margin-bottom: 20px; }
+.table-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; white-space: nowrap; }
+th { padding: 12px 9px; text-align: right; color: #6b776f; font-size: 12px; font-weight: 500; border-bottom: 1px solid #e2e8e2; }
+th:first-child { text-align: left; }
+td { padding: 19px 9px; text-align: right; border-bottom: 1px solid #edf0ec; font-variant-numeric: tabular-nums; font-size: 14px; }
+td:first-child { text-align: left; }
+tr.selected { background: #f0f7f1; }
+.company-button { background: none; color: #20312d; border: 0; padding: 0; text-align: left; font-weight: 600; }
+.company-button span { display: block; font-size: 12px; color: #6b776f; font-weight: 400; margin-top: 5px; }
+.up { color: #226944; }.down { color: #a24939; }.flat { color: #66716c; }
+svg { width: 76px; height: 28px; display: block; margin-left: auto; }
+polyline { fill: none; stroke: #527e6a; stroke-width: 2; vector-effect: non-scaling-stroke; }
+.note { color: #66716c; font-size: 12px; line-height: 1.6; margin: 16px 0 0; }
+.detail h2 { margin-top: 7px; }
+.selected-price { font-size: 30px; font-weight: 650; margin: 14px 0 22px; letter-spacing: -.03em; }
+dl { margin: 0 0 24px; font-size: 13px; }
+dl > div { display: flex; justify-content: space-between; padding: 9px 0; gap: 12px; border-bottom: 1px solid #edf0ec; }
+dt { color: #66716c; }dd { margin: 0; font-variant-numeric: tabular-nums; }
+label { display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; }
+input { width: 100%; padding: 11px 12px; font: inherit; border: 1px solid #bdcdbf; border-radius: 6px; background: #fff; color: inherit; }
+.trade-value { font-size: 13px; color: #52685c; }
+.trade-buttons { display: flex; gap: 10px; }
+button { font: inherit; font-size: 14px; cursor: pointer; border: 1px solid #276347; border-radius: 6px; padding: 11px 22px; background: #276347; color: white; font-weight: 600; }
+.trade-buttons button { flex: 1; }
+button.secondary { background: #fff; color: #276347; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+button:focus-visible, input:focus-visible { outline: 3px solid #edbd59; outline-offset: 3px; }
+#trade-feedback { min-height: 20px; font-size: 13px; color: #276347; }
+footer { margin-top: 22px; padding: 18px 24px; background: #e5ede4; border-radius: 10px; }
+footer p { font-size: 14px; margin: 0; line-height: 1.5; }
+.checkpoint { color: #79847c; font-size: 11px; text-align: center; margin-top: 22px; }
+@media (max-width: 850px) { .workspace { grid-template-columns: 1fr; }.detail { max-width: none; } }
+@media (max-width: 520px) { main { padding: 22px 14px; }.summary { gap: 8px; }.summary > div { padding: 14px 10px; }.summary strong { font-size: 21px; }.summary span { font-size: 11px; }.market, .detail { padding: 18px; }.section-heading { align-items: start; flex-direction: column; gap: 6px; }footer { align-items: start; flex-direction: column; }footer button { width: 100%; }.day-block span { font-size: 11px; } }

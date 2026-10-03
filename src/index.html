@@ -1,10 +1,53 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Stock Incremental / E0-X1 / CP0</title></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stock Incremental / E0-X1 / CP2</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
 <body>
-<h1>Stock Incremental</h1>
-<p>E0-X1 experimental project</p>
-<p>CP0: Authority and Experimental Baseline</p>
-<p>Baseline launch successful. No gameplay implemented.</p>
+  <main>
+    <header>
+      <div><p class="eyebrow">E0-X1 · Market experiment</p><h1>Stock Incremental</h1></div>
+      <div class="day-block"><strong id="day">Day 1 of 12</strong><span id="next-earnings">Next earnings: Day 4</span></div>
+    </header>
+    <section class="summary" aria-label="Portfolio summary">
+      <div><span>Cash</span><strong id="cash">$100.00</strong></div>
+      <div><span>Invested value</span><strong id="invested">$0.00</strong></div>
+      <div><span>Total value</span><strong id="total">$100.00</strong></div>
+    </section>
+    <div class="workspace">
+      <section class="market" aria-labelledby="market-heading">
+        <div class="section-heading"><h2 id="market-heading">The market</h2><span>Five companies · Two sectors</span></div>
+        <div class="table-scroll"><table>
+          <thead><tr><th scope="col">Company</th><th scope="col">Price</th><th scope="col">Recent move</th><th scope="col">History</th><th scope="col">Shares</th></tr></thead>
+          <tbody id="companies"></tbody>
+        </table></div>
+        <p class="note">Select a company to trade. Recent move compares up to three daily advances.</p>
+      </section>
+      <section class="detail" aria-labelledby="selected-name">
+        <p class="eyebrow" id="selected-sector">Consumer</p>
+        <h2 id="selected-name">Northstar Foods</h2>
+        <p class="selected-price" id="selected-price">$20.00</p>
+        <dl><div><dt>Your shares</dt><dd id="selected-shares">0</dd></div><div><dt>Position value</dt><dd id="position-value">$0.00</dd></div><div><dt>Share of total value</dt><dd id="concentration">0.0%</dd></div></dl>
+        <label for="quantity">Number of shares</label>
+        <input id="quantity" type="number" min="1" step="1" value="1" inputmode="numeric" autocomplete="off">
+        <p class="trade-value" id="trade-value">Trade value: $20.00</p>
+        <div class="trade-buttons"><button id="buy" type="button">Buy</button><button id="sell" class="secondary" type="button">Sell</button></div>
+        <p id="trade-feedback" role="status" aria-live="polite"></p>
+        <p id="trade-limits" class="note"></p>
+        <p class="note">Buy up to 80% of your total value in one company. Price changes can later move a holding above the cap; selling remains available.</p>
+        <p class="note">Amounts shown to cents. Trades use full price precision.</p>
+      </section>
+    </div>
+    <footer>
+      <p id="session-status" role="status" aria-live="polite">Observe prices, buy or sell, then advance the day.</p>
+      <button id="advance" type="button">Advance Day</button>
+    </footer>
+    <p class="checkpoint">CP2 prototype · Information and earnings presentation are deferred to CP3.</p>
+    <noscript>This prototype requires JavaScript to run.</noscript>
+  </main>
 </body>
 </html>

@@ -15,8 +15,15 @@ test('baseline server loads and serves the identifiable project', async (context
   assert.equal(response.status, 200);
   assert.match(response.headers.get('content-type'), /text\/html/);
   const body = await response.text();
-  assert.match(body, /<title>Stock Incremental \/ E0-X1 \/ CP0<\/title>/);
-  assert.match(body, /No gameplay implemented/);
+  assert.match(body, /<title>Stock Incremental \/ E0-X1 \/ CP2<\/title>/);
+  assert.match(body, /<script type="module" src="\/app.js"><\/script>/);
+  for (const [path, type] of [['/app.js', 'text/javascript'], ['/market.js', 'text/javascript'],
+    ['/trading.js', 'text/javascript'], ['/style.css', 'text/css']]) {
+    const asset = await fetch(`${url}${path}`);
+    assert.equal(asset.status, 200);
+    assert.ok(asset.headers.get('content-type').startsWith(type));
+    assert.ok((await asset.text()).length > 0);
+  }
   const missing = await fetch(`${url}/missing`);
   assert.equal(missing.status, 404);
 });

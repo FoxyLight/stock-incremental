@@ -153,3 +153,18 @@ No behavior change is authorized during integration. The accepted source/test
 SHA-256 fingerprints above identify the implementation being committed.
 CP2 remains NOT AUTHORIZED. Stop after freeze verification and report whether
 CP1 is ready to be marked PASS / CLOSED. No later work is authorized by a pass.
+
+## CP1 closure and CP2 authorization - 2026-10-03
+
+The user explicitly approved CP1 - Market Simulation Core as PASS / CLOSED.
+Authoritative frozen CP1 baseline: b4038e151f1407306448ac7d880fce0703eb0982.
+Repository: FoxyLight/stock-incremental. Integration branch: main.
+Freeze evidence: 25 tests passed, exit 0; clean working tree; HEAD, main,
+origin/main and live remote main agreed; implementation unchanged; no CP2 work
+or unresolved freeze issue at that checkpoint. The exact frozen SHA above
+supersedes the separate-record reference for CP1 baseline identity.
+
+Only CP2 - Minimal Playable Trading Loop was subsequently authorized from that
+exact frozen baseline. CP3 remains NOT AUTHORIZED. CP2 work does not modify the
+frozen CP1 simulation behavior or redefine the CP1 baseline.
+See CP2_Report.md for the current implementation evidence and stopping boundary.
