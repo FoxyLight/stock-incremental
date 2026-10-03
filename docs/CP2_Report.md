@@ -173,3 +173,57 @@ is preserved during freeze. The preference awaits separately authorized work.
 
 After successful freeze checks, report whether CP2 is ready to be marked
 PASS / CLOSED. CP3 remains NOT AUTHORIZED regardless of technical verification.
+
+## Darker-theme replacement candidate - 2026-10-03
+
+The user explicitly declined to accept the existing light-theme freeze
+c22e0a5072ae9dec492a0d3101ec5154265f4540 as the final CP2 baseline.
+It remains a historical immutable commit. Only a CSS-only darker theme was
+authorized for human visual/readability review before a replacement freeze.
+
+Current status: darker-theme candidate READY FOR HUMAN REVIEW, not approved.
+Only src/style.css changes presentation: dark colors, contrast, selected-row
+accent, native input color scheme, and explicit readable disabled-control colors.
+Layout, interaction structure, JavaScript, trading, portfolio calculations,
+simulation, company data, timeline, and price-history behavior are unchanged.
+No CP3 work, new UI system, animation, or styling infrastructure was added.
+
+Full automated verification after the CSS change: node --test, exit 0,
+33 tests passed, 0 failed, 0 skipped. Existing tests were unchanged.
+Agent browser inspection covered opening values, selected state, focused input,
+disabled controls, cap warning, Day 2 movement/sparklines, and success feedback.
+Calculated key text contrast ratios range from 6.25:1 to 13.31:1. These checks
+are not human visual approval or a full accessibility certification.
+
+Required project changes are confined to src/style.css and this documentation
+appendix. No staging, commit, push, or replacement freeze is authorized until
+the user approves the darker theme. CP3 remains NOT AUTHORIZED.
+Player-accessible Reset Experiment remains REQUIRED before CP4 readiness;
+the existing reset core is preserved.
+
+Next Evidence Source: human visual/readability review of the darker CP2 candidate.
+
+## Darker-theme human approval and replacement freeze authority - 2026-10-03
+
+The user gave the darker-theme CP2 visual/readability review PASS and accepted
+the CSS-only candidate as the final CP2 presentation baseline.
+
+Human review confirmed comfortable readable body/secondary text, distinct company
+rows, clear selection, understandable buttons/inputs/disabled states, readable
+price movement and values, noticeable warnings/feedback, visible sparklines,
+no unnecessary visual complexity, and comfort for a complete 12-day session.
+
+Only replacement CP2 integration/freeze is authorized: commit the approved theme
+and minimum documentation, push main, record the immutable replacement SHA,
+verify HEAD/main/origin-main/live-remote-main agreement, rerun all 33 tests at the
+commit, and confirm a clean tree. No additional presentation or behavior changes
+are authorized. The prior light-theme freeze remains historical and is replaced
+as the final CP2 presentation baseline only after these checks pass.
+
+The exact post-commit SHA and final verification are recorded in the separate
+CP2_Dark_Freeze_Record.md deliverable, following the established freeze-record
+convention. Earlier candidate/pending-approval statements above are history.
+
+Player-accessible Reset Experiment remains REQUIRED before CP4 experimental
+readiness. The existing reset core is unchanged. CP3 remains NOT AUTHORIZED.
+After freeze verification, report whether CP2 is ready to be marked PASS / CLOSED.
