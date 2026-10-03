@@ -227,3 +227,17 @@ convention. Earlier candidate/pending-approval statements above are history.
 Player-accessible Reset Experiment remains REQUIRED before CP4 experimental
 readiness. The existing reset core is unchanged. CP3 remains NOT AUTHORIZED.
 After freeze verification, report whether CP2 is ready to be marked PASS / CLOSED.
+
+## CP2 closure and CP3 authorization - 2026-10-03
+
+The user explicitly approved CP2 PASS / CLOSED with final frozen baseline
+`0b991db329afb1020073b597cad23180f3e6c986` on main in FoxyLight/stock-incremental.
+The approved darker theme is authoritative. The user accepted the frozen evidence:
+33 tests passed, exit 0, clean tree, HEAD/main/origin-main/live-remote-main agreement,
+unchanged approved behavior, no CP3 work and no unresolved freeze issue.
+The prior light-theme freeze and earlier authorization statements above are history.
+
+Only CP3 - Information, Earnings, and Readability is now authorized. CP3 began
+from the exact frozen CP2 commit. See CP3_Report.md for the uncommitted candidate,
+verification and human approval boundary. CP4 remains NOT AUTHORIZED.
+Player-accessible Reset Experiment remains REQUIRED before CP4 readiness.

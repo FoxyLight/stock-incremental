@@ -7,6 +7,7 @@ const assets = new Map([
   ['/app.js', ['app.js', 'text/javascript; charset=utf-8']],
   ['/market.js', ['market.js', 'text/javascript; charset=utf-8']],
   ['/trading.js', ['trading.js', 'text/javascript; charset=utf-8']],
+  ['/information.js', ['information.js', 'text/javascript; charset=utf-8']],
   ['/style.css', ['style.css', 'text/css; charset=utf-8']],
 ].map(([path, [file, type]]) => [path, { type, body: readFileSync(new URL(file, import.meta.url)) }]));
 
@@ -25,6 +26,6 @@ export function createBaselineServer() {
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   createBaselineServer().listen(4173, '127.0.0.1', () => {
-    console.log('Stock Incremental / E0-X1 / CP2: http://127.0.0.1:4173');
+    console.log('Stock Incremental / E0-X1 / CP3: http://127.0.0.1:4173');
   });
 }

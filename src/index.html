@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stock Incremental / E0-X1 / CP2</title>
+  <title>Stock Incremental / E0-X1 / CP3</title>
   <link rel="stylesheet" href="/style.css">
   <script type="module" src="/app.js"></script>
 </head>
@@ -18,6 +18,21 @@
       <div><span>Invested value</span><strong id="invested">$0.00</strong></div>
       <div><span>Total value</span><strong id="total">$100.00</strong></div>
     </section>
+    <section id="session-results" class="presentation-panel" aria-labelledby="results-heading" hidden>
+      <h2 id="results-heading">Your session result</h2>
+      <div class="result-values"><div><span>Starting Value</span><strong id="starting-value"></strong></div><div><span>Final Portfolio Value</span><strong id="final-value"></strong></div><div><span>Net Gain/Loss</span><strong id="net-result"></strong></div></div>
+      <p class="note">Final prices and holdings are shown in the market table below. Your final earnings report is also available below.</p>
+    </section>
+    <section class="information-strip" aria-label="Market information">
+      <div id="demand-indicator">Market indicator available on Day 3</div>
+      <div id="cost-indicator">Market indicator available on Day 5</div>
+      <p id="economy-explanation" class="note" hidden></p>
+    </section>
+    <section class="daily-update" aria-labelledby="daily-heading" aria-live="polite">
+      <h2 id="daily-heading">Day 1 · Market update</h2>
+      <ul id="daily-messages"></ul>
+      <a id="earnings-link" href="#earnings" hidden></a>
+    </section>
     <div class="workspace">
       <section class="market" aria-labelledby="market-heading">
         <div class="section-heading"><h2 id="market-heading">The market</h2><span>Five companies · Two sectors</span></div>
@@ -30,8 +45,10 @@
       <section class="detail" aria-labelledby="selected-name">
         <p class="eyebrow" id="selected-sector">Consumer</p>
         <h2 id="selected-name">Northstar Foods</h2>
+        <p id="business-description" class="business-description">Business description available on Day 2.</p>
         <p class="selected-price" id="selected-price">$20.00</p>
         <dl><div><dt>Your shares</dt><dd id="selected-shares">0</dd></div><div><dt>Position value</dt><dd id="position-value">$0.00</dd></div><div><dt>Share of total value</dt><dd id="concentration">0.0%</dd></div></dl>
+        <div id="sensitivities" hidden><h3>Company sensitivities</h3><dl><div><dt>Demand exposure</dt><dd id="demand-exposure"></dd></div><div><dt>Cost exposure</dt><dd id="cost-exposure"></dd></div></dl><p id="company-trait" class="note"></p></div>
         <label for="quantity">Number of shares</label>
         <input id="quantity" type="number" min="1" step="1" value="1" inputmode="numeric" autocomplete="off">
         <p class="trade-value" id="trade-value">Trade value: $20.00</p>
@@ -46,7 +63,16 @@
       <p id="session-status" role="status" aria-live="polite">Observe prices, buy or sell, then advance the day.</p>
       <button id="advance" type="button">Advance Day</button>
     </footer>
-    <p class="checkpoint">CP2 prototype · Information and earnings presentation are deferred to CP3.</p>
+    <section id="lantern-event" class="presentation-panel company-event" aria-labelledby="lantern-heading" hidden>
+      <p class="eyebrow">Day 7 · Company event</p><h2 id="lantern-heading">Lantern Devices: product reception</h2>
+      <p id="lantern-message"></p><p class="note">The one-time product effect is included in future reported Revenue, beginning with Day 8 earnings.</p>
+    </section>
+    <section id="earnings" class="presentation-panel" aria-labelledby="earnings-heading" hidden>
+      <h2 id="earnings-heading">Reported earnings</h2><p id="earnings-context" class="note"></p>
+      <div class="table-scroll"><table class="earnings-table"><thead><tr><th scope="col">Company</th><th scope="col">Revenue · prior → new</th><th scope="col">Costs · prior → new</th><th scope="col">Profit · prior → new</th><th scope="col">Price response</th></tr></thead><tbody id="earnings-rows"></tbody></table></div>
+      <p class="note">Revenue, Costs, and Profit use experiment units. Price response shows the immediate earnings adjustment, not the entire day's movement.</p>
+    </section>
+    <p class="checkpoint">CP3 prototype · Human play evidence comes after experimental readiness.</p>
     <noscript>This prototype requires JavaScript to run.</noscript>
   </main>
 </body>

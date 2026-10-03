@@ -1,8 +1,8 @@
 # Stock Incremental
 
-Phase: SPBT EXPLORE. Experiment: E0-X1. Current checkpoint: CP2.
+Phase: SPBT EXPLORE. Experiment: E0-X1. Current checkpoint: CP3.
 
-CP0 and CP1 are PASS / CLOSED. CP2 adds the minimal playable trading loop on the frozen CP1 core. CP3 is NOT AUTHORIZED.
+CP0, CP1 and CP2 are PASS / CLOSED. CP3 adds information, earnings and readability to the frozen CP2 baseline. CP3 human review is PASS; integration and freeze are authorized. CP4 is NOT AUTHORIZED.
 
 ## Run and verify
 
@@ -26,7 +26,7 @@ Equivalent package commands: `npm.cmd start` and `npm.cmd test`.
 
 See [authority map](docs/README.md) and [CP0 checkpoint](docs/CP0_Report.md).
 The supplied authority documents are preserved as historical decisions.
-The current user instruction authorizes CP2 only. See docs/CP0_Report.md for the earnings-day clarification, docs/CP1_Report.md for CP1 authority, and docs/CP2_Report.md for the current evidence and approval boundary.
+The current user instruction authorizes CP3 integration and freeze only. See docs/CP0_Report.md for the earnings-day clarification, docs/CP1_Report.md and docs/CP2_Report.md for frozen authority, and docs/CP3_Report.md for current evidence and the human approval boundary. Player-accessible Reset Experiment remains required before CP4 readiness.
 
 ## Environment choice
 

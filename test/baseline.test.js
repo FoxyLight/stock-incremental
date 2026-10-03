@@ -15,10 +15,10 @@ test('baseline server loads and serves the identifiable project', async (context
   assert.equal(response.status, 200);
   assert.match(response.headers.get('content-type'), /text\/html/);
   const body = await response.text();
-  assert.match(body, /<title>Stock Incremental \/ E0-X1 \/ CP2<\/title>/);
+  assert.match(body, /<title>Stock Incremental \/ E0-X1 \/ CP3<\/title>/);
   assert.match(body, /<script type="module" src="\/app.js"><\/script>/);
   for (const [path, type] of [['/app.js', 'text/javascript'], ['/market.js', 'text/javascript'],
-    ['/trading.js', 'text/javascript'], ['/style.css', 'text/css']]) {
+    ['/trading.js', 'text/javascript'], ['/information.js', 'text/javascript'], ['/style.css', 'text/css']]) {
     const asset = await fetch(`${url}${path}`);
     assert.equal(asset.status, 200);
     assert.ok(asset.headers.get('content-type').startsWith(type));
