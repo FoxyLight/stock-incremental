@@ -132,3 +132,38 @@ Compare SHA to the freeze record. Status should be empty. Open
 http://127.0.0.1:4173 and confirm the identified CP0 page and absence of gameplay.
 Stop the server with Ctrl+C. These steps reproduce the agent's completed checks;
 they are not additional technical gates required before requesting approval.
+
+## Post-freeze authority record - 2026-10-03
+
+The original report above records the CP0 verification state at freeze. It is
+preserved as history. The following subsequent user decisions supersede its
+pending-approval and no-remote statements without changing the frozen commit.
+
+Repository root: C:\Users\jneal\Documents\Projects\stock-incremental.
+Remote supplied by the user: https://github.com/FoxyLight/stock-incremental.
+Registered local origin URL: https://github.com/FoxyLight/stock-incremental.git.
+At registration, remote reference lookup succeeded and returned no branches or
+commits. Nothing was pushed.
+
+Authoritative CP0 baseline: f0f1fecc4477e76225ab463a517945af9a60737c on main.
+CP0 status: PASS / CLOSED, explicitly approved by the user on 2026-10-03.
+CP1 - Market Simulation Core only is authorized using that baseline and rules
+v0.1.1. CP2 remains NOT AUTHORIZED. CP1 changes do not redefine the CP0 baseline.
+
+### Authoritative earnings-day clarification
+
+User decision, 2026-10-03:
+
+> Option 2 is authoritative. On earnings Days 4, 8, and 12, do not run ordinary
+> Expected Reference Price convergence or daily price noise. After the day's true
+> fundamentals are updated, reveal earnings, calculate the true Reference Price,
+> and move Market Price 75% of the remaining gap toward that Reference Price.
+> The ordinary 50% Expected Reference Price convergence plus ±2% noise applies
+> only on non-earnings days. Treat the contrary ordering in E0-X1C as a planning
+> ambiguity, not a rule change. Record this clarification in CP0 authority
+> documentation, but do not revise the market rules.
+
+This resolves the ambiguity in E0-X1C's exact Advance Day ordering. The market
+rules are not revised. On earnings days, no noise samples are consumed. Earnings
+reports update last-reported fundamentals after resolving the true valuation.
+See CP1_Report.md for implementation evidence and the CP1 stopping boundary.
