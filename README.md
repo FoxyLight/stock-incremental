@@ -1,8 +1,8 @@
 # Stock Incremental
 
-Phase: SPBT EXPLORE. Experiment: E0-X1. Current checkpoint: CP3.
+Phase: SPBT EXPLORE. Experiment: E0-X1. Current checkpoint: CP4.
 
-CP0, CP1 and CP2 are PASS / CLOSED. CP3 adds information, earnings and readability to the frozen CP2 baseline. CP3 human review is PASS; integration and freeze are authorized. CP4 is NOT AUTHORIZED.
+CP0, CP1, CP2 and CP3 are PASS / CLOSED. CP4 experimental readiness adds the tracked Reset Experiment control and verifies the preserved experiment. CP4 human readiness review is PASS; integration and freeze are authorized. Human playtest interpretation and post-E0 expansion are not authorized.
 
 ## Run and verify
 
@@ -26,7 +26,7 @@ Equivalent package commands: `npm.cmd start` and `npm.cmd test`.
 
 See [authority map](docs/README.md) and [CP0 checkpoint](docs/CP0_Report.md).
 The supplied authority documents are preserved as historical decisions.
-The current user instruction authorizes CP3 integration and freeze only. See docs/CP0_Report.md for the earnings-day clarification, docs/CP1_Report.md and docs/CP2_Report.md for frozen authority, and docs/CP3_Report.md for current evidence and the human approval boundary. Player-accessible Reset Experiment remains required before CP4 readiness.
+The current user instruction authorizes CP4 integration and freeze only. See docs/CP0_Report.md for the earnings-day clarification, docs/CP1_Report.md and docs/CP2_Report.md for frozen authority, and docs/CP3_Report.md for current evidence and the human approval boundary. See docs/CP4_Report.md for readiness evidence and docs/E0-X1_Human_Observation_Protocol.md for the prepared protocol. Reset Experiment and the observation protocol have human readiness approval. The accompanying CP4_Freeze_Record.md deliverable records the frozen commit identity and verification.
 
 ## Environment choice
 

@@ -125,3 +125,16 @@ Player-accessible Reset Experiment remains outstanding and REQUIRED before CP4
 experimental readiness. The reset core and tests are preserved. After successful
 freeze checks, report whether CP3 is ready to be marked PASS / CLOSED; closure
 and any later work require the user's explicit next instruction.
+
+## CP3 closure and CP4 authorization - 2026-10-03
+
+The user explicitly approved CP3 PASS / CLOSED with frozen baseline
+`cee27a04aa92ce893628e3295c1e4c3b2658994b` on main in FoxyLight/stock-incremental.
+Accepted evidence: 41 tests passed, exit 0, clean tree, all local/remote main
+references agree, unchanged approved behavior and no unresolved freeze issue.
+The earlier pending-review and integration-only statements are historical.
+
+Only CP4 - Experimental Readiness Audit is now authorized, including the tracked
+player-accessible reset requirement. CP4 began from the exact frozen CP3 SHA.
+See CP4_Report.md for readiness evidence and the human approval boundary.
+No human playtest interpretation or post-E0 expansion is authorized.

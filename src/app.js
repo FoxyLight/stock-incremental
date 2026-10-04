@@ -1,4 +1,4 @@
-import { COMPANIES, createSession, advanceDay } from './market.js';
+import { COMPANIES, createSession, advanceDay, resetSession } from './market.js';
 import { assessTrade, trade, portfolioValue } from './trading.js';
 import { presentInformation } from './information.js';
 
@@ -111,6 +111,7 @@ function render() {
   element('selected-shares').textContent = shares;
   element('position-value').textContent = money(position);
   element('concentration').textContent = `${(position / total * 100).toFixed(1)}%`;
+  element('reset').disabled = busy;
   element('advance').disabled = busy || session.session_complete;
   element('advance').textContent = session.session_complete ? 'Session complete' : busy ? 'Advancing…' : 'Advance Day';
   element('session-status').textContent = session.session_complete
@@ -147,5 +148,14 @@ element('advance').addEventListener('click', (event) => {
   render();
   // Keep the action locked across the second click of a normal double-click.
   window.setTimeout(() => { busy = false; render(); }, 400);
+});
+element('reset').addEventListener('click', (event) => {
+  if (event.detail > 1 || busy) return;
+  session = resetSession(session);
+  selectedId = COMPANIES[0].id;
+  previousDay = null;
+  element('quantity').value = '1';
+  feedback = 'Experiment reset. Day 1 restored with the same market sequence.';
+  render();
 });
 render();

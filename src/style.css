@@ -78,3 +78,5 @@ footer p { font-size: 14px; margin: 0; line-height: 1.5; }
 .report-change { display: block; margin-top: 5px; font-size: 12px; color: #b2c3b8; }
 .report-change.up { color: #96ddb2; }.report-change.down { color: #f5aa9a; }
 @media (max-width: 520px) { .information-strip { grid-template-columns: 1fr; padding: 16px 18px; }.daily-update, .presentation-panel { padding: 18px; }.result-values { gap: 10px; }.result-values strong { font-size: 20px; }.result-values span { font-size: 11px; } }
+
+#reset { margin-top: 12px; }
